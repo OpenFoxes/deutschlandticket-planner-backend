@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "description": "Renovate-Konfiguration des DTicket-Planer-Backends",
+  "labels": ["👷 renovate"],
+  "prHourlyLimit": 20,
+  "recreateClosed": true,
+  "prTitle": "[RFR] {{commitMessage}}",
+  "commitMessagePrefix": "⬆️ ",
+  "commitMessageAction": "Upgrade",
+  "commitMessageTopic": "Abhängigkeit {{depName}}",
+  "commitMessageExtra": "auf {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "commitMessageAction": "Lockfile-Wartung",
+    "prBodyDefinitions": { "Change": "Alle Locks aktualisiert" }
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["pin"],
+      "commitMessagePrefix": "📌 ",
+      "commitMessageAction": "Pinne",
+      "addLabels": ["pin"]
+    },
+    {
+      "matchUpdateTypes": ["rollback"],
+      "commitMessagePrefix": "⬇️ ",
+      "commitMessageAction": "Downgrade"
+    }
+  ]
+}
