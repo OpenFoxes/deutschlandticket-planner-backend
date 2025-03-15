@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+axum = "0.8.1"
+hyper = "1.6.0"
+tokio = { version = "1.44.1", features = ["full"] }
+
+[dev-dependencies]
+axum-test = "17.2.0"
