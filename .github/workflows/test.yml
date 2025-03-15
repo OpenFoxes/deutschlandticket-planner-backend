@@ -1,0 +1,20 @@
+name: PR testen
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  test:
+    name: Tests ausführen
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4.2.2
+
+      - name: Abhängigkeiten installieren
+        run: 'cargo build --locked'
+
+      - name: Alle Tests ausführen
+        run: 'cargo test'
