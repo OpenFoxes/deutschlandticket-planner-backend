@@ -29,6 +29,15 @@ blockquote{color:var(--tertiarycolor) !important}
 .quoteblock{color:var(--white)}
 code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
 
+/* Fußleiste unten anbringen */
+.article {
+  min-height: 100vh;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+}
+
 /* Table styles */
 th{background-color: var(--maincolor);color:var(--white) !important;}
 td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
