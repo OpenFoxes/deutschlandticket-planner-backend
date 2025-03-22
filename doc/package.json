@@ -1,0 +1,21 @@
+{
+  "name": "dticket-planner-docs",
+  "version": "0.1.0",
+  "description": "Dokumentation für den Deutschlandticketplaner",
+  "main": "index.js",
+  "scripts": {
+    "generate-docs": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenFoxes/deutschlandticket-planner-backend.git"
+  },
+  "private": true,
+  "dependencies": {
+    "asciidoctor": "3.0.4",
+    "glob": "11.0.1"
+  },
+  "devDependencies": {
+    "prettier": "3.5.3"
+  }
+}

@@ -1,0 +1,5 @@
+# Node-Abhängigkeiten
+node_modules
+
+# Generierte HTML-Dateien
+generated
