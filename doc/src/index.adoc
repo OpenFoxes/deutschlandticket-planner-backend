@@ -1,0 +1,9 @@
+= Deutschlandticket-Planer
+
+An dieser Stelle wird demnächst die Dokumentation dieses Projektes entstehen.
+Sie wird verschiedene Aspekte beinhalten:
+
+- Zweck des Projektes
+- Bedienungsanleitung der Anwendung
+- Guide zur Einbindung und Verwendung der APIs
+- Architekturentscheidungen & Architekturbild
