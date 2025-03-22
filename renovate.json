@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "description": "Renovate-Konfiguration des DTicket-Planer-Backends",
-  "labels": ["👷 renovate"],
+  "labels": ["update", "👷 renovate"],
   "prHourlyLimit": 20,
   "recreateClosed": true,
   "prTitle": "[RFR] {{commitMessage}}",
