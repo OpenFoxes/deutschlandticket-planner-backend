@@ -15,7 +15,7 @@ for (const document of documents) {
   const fileInfo = extractFileParts(document);
   console.log(`Erzeuge ${fileInfo.filename} unter ${fileInfo.dir}`);
   Asciidoctor.convertFile(document, {
-    safe: "safe",
+    safe: "unsafe",
     attributes: {
       linkcss: true,
       stylesheet: fileInfo.pathToDirRoot + "dark.css",
@@ -36,7 +36,7 @@ function extractFileParts(filepath) {
     filepath = filepath.substring(0, filepath.length - 1);
   }
 
-  const directoryDepth = filepath.split('"/').length - 1;
+  const directoryDepth = filepath.split("/").length - 2;
 
   return {
     filename: filepath.substring(
