@@ -3,3 +3,17 @@ include::../begriffe.adoc[]
 == {title-entwicklerdoku}
 
 include::zusammenfassung.adoc[]
+
+=== Versionierung
+
+Durch die Versionierung der Anwendung können verschiedene Anwendungsstände leichter auseinandergehalten werden.
+In diesem Projekt werden zwei Arten der Versionierung unterschieden:
+
+Version des Backends::
+Beschreibt den Entwicklungsstand der Gesamtanwendung.
+Bei jeder Aktualisierung, egal ob Rechtschreibkorrektur, Update einer Abhängigkeit oder einem großen neuen Feature
+wird die Versionsnummer der Anwendung erhöht.
+Version der APIs::
+Das Backend bietet externe Schnittstellen an, über die es genutzt werden kann.
+Jede dieser Schnittstellen verfügt über eine eigene Versionierung, welche zum Ziel hat,
+Nutzer jener Schnittstellen nicht zu brechen.
