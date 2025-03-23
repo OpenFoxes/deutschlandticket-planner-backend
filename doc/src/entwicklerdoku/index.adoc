@@ -49,3 +49,17 @@ ein festgelegtes Format erfüllen: `v__MAJOR__._MINOR_`.
 So könnte ein Release-Tag beispielsweise `v1.5` lauten.
 Sobald dieser Tag gesetzt wurde, setzt das Build-System die Patch-Version auf `0` und aktualisiert die Versionsnummer
 in der entsprechenden Projektdatei über einen separaten Commit.
+
+==== Versionierung der APIs
+
+Die externen Schnittstellen der Anwendung folgen einer eigenen, vereinfachten Versionierung.
+Die Versionierung richtet sich hierbei nur nach Breaking Changes.
+Sobald in einer Schnittstelle ein Breaking Change auftritt (Entfernen oder Ändern eines bestehenden Endpunkts),
+muss eine neue Version der entsprechenden Schnittstelle daneben gestellt werden.
+Diese enthält einen eigenen Endpunkt, sodass Anwender der Schnittstelle zu einem beliebigen Zeitpunkt umstellen können.
+
+Die parallel laufenden Schnittstellen müssen ansonsten beide gewartet werden.
+Zu einem beliebigen Zeitpunkt — das kann direkt beim Erstellen der neuen Version, aber auch nach 2 Jahren oder nie sein
+— können wir eine Version einer Schnittstelle (oder eine Schnittstelle selbst) als deprecated markieren.
+Diese Markierung muss mit einem entsprechenden Datumskommentar ergänzt werden.
+Wir garantieren, den Endpunkt für weitere 3 Monate aktiv und lauffähig zu halten, bevor wir ihn abschalten.
