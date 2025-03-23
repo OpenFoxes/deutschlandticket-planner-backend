@@ -63,3 +63,8 @@ Zu einem beliebigen Zeitpunkt — das kann direkt beim Erstellen der neuen Versi
 — können wir eine Version einer Schnittstelle (oder eine Schnittstelle selbst) als deprecated markieren.
 Diese Markierung muss mit einem entsprechenden Datumskommentar ergänzt werden.
 Wir garantieren, den Endpunkt für weitere 3 Monate aktiv und lauffähig zu halten, bevor wir ihn abschalten.
+
+==== Versionierung der Dokumentation
+
+Die Dokumentation wird *immer* analog zur Anwendung aktualisiert.
+Ihre Versionsnummer ist in ihrer `package.json` festgehalten.
