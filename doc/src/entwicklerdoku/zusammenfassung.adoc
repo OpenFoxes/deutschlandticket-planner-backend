@@ -1,0 +1,4 @@
+Die technische {title-entwicklerdoku} enthält Architekturbeschreibungen,
+technische Entscheidungen und Informationen rund um den Entwicklungsprozess.
+Sie ist nur für die Entwicklung des Deutschlandticket-Planer-Backends selbst gedacht,
+nicht aber zur Verwendung und Einbindung von diesem.
