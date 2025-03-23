@@ -17,3 +17,35 @@ Version der APIs::
 Das Backend bietet externe Schnittstellen an, über die es genutzt werden kann.
 Jede dieser Schnittstellen verfügt über eine eigene Versionierung, welche zum Ziel hat,
 Nutzer jener Schnittstellen nicht zu brechen.
+
+==== Versionierung des Backends
+
+Die Anwendung wird mittels https://semver.org/lang/de/[Semver] versioniert.
+Versionen können hier also in Versionsnummern aus Major, Minor und Patch angegeben werden.
+
+Die aktuelle Version des Backends ist in der `Cargo.toml` angegeben.
+Sie erhöht sich bei *jeder* Änderung.
+Diese Erhöhung geschieht automatisch durch das Build-System in Form der Patch-Versionsnummer.
+
+Die Major- und Minor-Versionsnummern werden explizit in Form von Github-Releases beschrieben und bedeuten immer
+ein Deployment auf die Produktionsumgebung.
+
+Die Major- und Minor-Version beschreibt also den aktuellen Release.
+Die Patch-Versionsnummer beschreibt hingegen, welche Version der Anwendung innerhalb des aktuellen Releases vorliegt.
+
+===== Automatische Patch-Versionen
+
+Bei jeder Änderung auf Main (i.d.R. ausgelöst durch zusammengeführte Pull Requests) erhöht das Build-System
+automatisch die Patch-Versionsnummer um 1.
+Da die APIs sicherstellen sollen, keine Breaking Changes zu verursachen, kann hier auch bei großen Änderungen
+die Patch-Version verwendet werden.
+
+===== Produktiv-Deployments
+
+Soll die Anwendung auf der Produktionsumgebung aktualisiert werden, muss in Github ein Release mit Tag angelegt werden.
+Während der Release-Name frei wählbar ist (im Regelfall aber die Versionsnummer enthalten sollte), muss der Tag
+ein festgelegtes Format erfüllen: `v__MAJOR__._MINOR_`.
+
+So könnte ein Release-Tag beispielsweise `v1.5` lauten.
+Sobald dieser Tag gesetzt wurde, setzt das Build-System die Patch-Version auf `0` und aktualisiert die Versionsnummer
+in der entsprechenden Projektdatei über einen separaten Commit.
