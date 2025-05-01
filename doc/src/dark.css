@@ -33,6 +33,10 @@ code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) 
 .article {
   min-height: 100vh;
 }
+#content {
+  margin-bottom: 0;
+  padding-bottom: 4rem;
+}
 #footer {
   position: absolute;
   bottom: 0;
