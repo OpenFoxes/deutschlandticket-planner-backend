@@ -1,3 +1,5 @@
+include::begriffe.adoc[]
+
 = Deutschlandticket-Planer
 
 An dieser Stelle wird demnächst die Dokumentation dieses Projektes entstehen.
@@ -7,3 +9,9 @@ Sie wird verschiedene Aspekte beinhalten:
 - Bedienungsanleitung der Anwendung
 - Guide zur Einbindung und Verwendung der APIs
 - Architekturentscheidungen & Architekturbild
+
+== {title-entwicklerdoku}
+
+include::entwicklerdoku/zusammenfassung.adoc[]
+
+xref:entwicklerdoku/index.adoc[Zur {title-entwicklerdoku}]
