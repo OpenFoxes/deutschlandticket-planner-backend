@@ -5,7 +5,40 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "main"
+  cancel-in-progress: false
+
 jobs:
+  docs:
+    name: Dokumentation aktualisieren
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Doku-Abhängigkeiten auflösen
+        working-directory: ./doc
+        run: npm ci
+      - name: Dokumentation generieren
+        working-directory: ./doc
+        run: npm run generate-docs
+      - name: Pages vorbereiten
+        uses: actions/configure-pages@v5.0.0
+      - name: Artefakt hochladen
+        uses: actions/upload-artifact@v3.2.1
+        with:
+          path: doc/generated/src
+      - name: Dokumentation deployen
+        uses: actions/deploy-pages@v4.0.5
+
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
