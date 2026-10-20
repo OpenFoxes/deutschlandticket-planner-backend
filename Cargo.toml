@@ -10,4 +10,4 @@ utoipa = { version = "5.3.1", features = ["axum_extras"] }
 utoipa-swagger-ui = { version = "9.0.0", features = ["axum"] }
 
 [dev-dependencies]
-axum-test = "17.2.0"
+axum-test = "21.0.0"
